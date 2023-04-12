@@ -1,0 +1,17 @@
+{% extends 'quoteapp/base.html' %}
+
+{% block content %}
+ <h1>{{ name }}</h1>
+<ul>
+    {% for quote in quotes %}
+        <li>Quote: {{ quote.quote }}</li>
+        <li>Authors: {{ quote.author }}</li>
+
+        {% for tag in quote.tags.all %}
+        <li>Tags: {{ tag.tag }}</li>
+        {% endfor %}
+
+    {% endfor %}
+</ul>
+
+{% endblock %}

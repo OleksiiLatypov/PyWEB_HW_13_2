@@ -1,0 +1,26 @@
+{% extends 'quoteapp/base.html' %}
+
+{% block content %}
+<h1> Hello Quote</h1>
+<form method="POST" action="{% url 'quoteapp:quote' %}">
+    {% csrf_token %}
+    <div style = "padding: 100px">
+        <label>Enter a quote:
+            {{ form.quote }}
+        </label><br><br><br>
+        <span>{{ form.errors.name }}</span>
+        <label>Enter a author
+            {{ form.author }}
+        </label><br><br><br>
+        <span>{{ form.errors.name }}</span>
+        <label>Enter a tags<br>
+            {{ form.tags }}
+        </label><br><br><br>
+        <span>{{ form.errors.name }}</span>
+    <div class="grid">
+        <button type="submit">Submit</button>
+        <button type="reset" class="secondary">Reset</button>
+    </div>
+    </div>
+</form>
+{% endblock %}
