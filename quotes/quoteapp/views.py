@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from .forms import TagForm, AuthorForm, QuoteForm
 from .models import Tag, Quote, Author
 

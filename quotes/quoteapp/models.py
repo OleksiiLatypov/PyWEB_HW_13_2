@@ -27,6 +27,4 @@ class Quote(models.Model):
     def __str__(self):
         return f'{self.quote}'
 
-    def show_quote_tags(self):
-        tag_obj = self.tags.all()
-        return tag_obj
+

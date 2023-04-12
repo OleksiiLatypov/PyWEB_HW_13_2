@@ -11,7 +11,6 @@ urlpatterns = [
     path('authors/', views.add_author, name='author'),
     path('quotes/', views.add_quote, name='quote'),
     path('tags/', views.add_tag, name='tag'),
-    #path("detail/<str:fullname>", views.detail, name="detail"),
     path("info/", views.info, name="info"),
     path("info/detail_author/<int:author_id>", views.author_page, name='detail_author'),
     path("info/detail_quotes/<int:quote_id>", views.author_page, name='detail_quotes')
