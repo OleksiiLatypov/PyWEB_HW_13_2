@@ -10,13 +10,8 @@ from .models import Tag, Quote, Author
 # Create your views here.
 
 def main(request):
-    # tags = get_object_or_404(Tag, )
-    quotes = Quote.objects.all()
+    quotes = Quote.objects.all()[:10]
     all_tags = []
-    most_popular_tag = []
-    for el in quotes:
-        for tag in el.show_quote_tags():
-            all_tags.append(tag)
     return render(request, 'quoteapp/index.html', {"quotes": quotes, 'name': 'Hello name', 'all_tags': all_tags})
 
 
@@ -85,7 +80,6 @@ def seed_db():
         tags.extend(quote.get('tags'))
     tags = set(tags)
     tags = list(tags)
-    print(tags)
     Tag.objects.all().delete()
     for _tag in tags:
         Tag.objects.create(name=_tag)

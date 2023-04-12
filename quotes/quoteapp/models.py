@@ -19,10 +19,6 @@ class Author(models.Model):
         return f'{self.fullname}'
 
 
-# class Quote(models.Model):
-#     quote = models.CharField()
-#     tags = models.ManyToManyField(Tag)
-#     author = models.ForeignKey(Author, on_delete=models.CASCADE)
 class Quote(models.Model):
     quote = models.TextField(unique=True, null=False)
     tags = models.ManyToManyField(Tag)
